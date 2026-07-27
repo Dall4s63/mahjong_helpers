@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fontspec}
+\setmainfont{STIX Two Text}
+\usepackage[height=1.6\baselineskip]{mahjong}
+\usepackage[skip=10pt plus2pt]{parskip}
+\usepackage{csquotes}
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\mj}[1]{\mahjong{#1}}
+%\newcommand{\mmj}[1]{\parbox[0][3\baselineskip]{\linewidth}{\mahjong{#1}}}
+\newcommand{\mmj}[1]{\begin{displayquote}\mahjong{#1}\end{displayquote}}
+\newcommand{\nl}{\newline}
+
+\begin{document}
+\section{Han Scorers}
+
+These are features of a hand that give Han, one of the measures 
+that is used to calculate the score a hand provides.
+
+\section{Non-Yaku}
+
+These are features of a hand that provide Han, but do not 
+count as Yaku and themselves cannot make a hand valid.
+
+\subsection{Dora: 1 Han}
+
+At the start of the game one of the tiles on the Dead Wall 
+is revealed as a Dora Indicator. Since the Dead Wall is 
+7 tiles long, this would look like e.g.
+\mmj{XX4XXXXp}
+Whichever tile comes after the Dora Indicator is a Dora tile, 
+so in the above example \mj{5p} would be a Dora tile.
+The sequence loops so if \mj{9m} is the Dora Indicator 
+then \mj{1m} is a Dora tile.
+
+The Honor tiles also have an order, the Wind tiles are in 
+the order of play \mj{1234z}. Similarly the Dragon tiles 
+have an order \mj{567z}, but you can remember the sequence 
+alphabetically, green to red to white.
+
+\subsection{Kandora: 1 Han}
+
+After a player calls Kan, the next tile of the Dead Wall 
+is flipped and becomes another Dora indicator. Continuing 
+from the example above the wall might now show 
+\mmj{XX4p7sXXX} 
+Which means that \mj{5p} and \mj{8s} are both Dora tiles.
+
+\subsection{Akadora: 1 Han}
+
+In Riichi Mahjong there are often a set of red 5s. Some sets 
+have one in each suit, and some have one in each except two in 
+the circle suit. These tiles look like \mj{0m0s0p}.
+
+\subsection{Stacking Dora}
+
+One tile can be a Dora tile multiple times, and thus be 
+worth multiple Han. For example, if the Dora Indicators showed 
+\mmj{22XXXs}
+then \mj{3s} would be worth 2 Han. Similarly if the 
+Dora Indicator was
+\mmj{4XXXXm}
+then \mj{0m} would be worth 2 Han.
+
+\section{Yaku}
+
+Yaku are features of a hand that provide Han. Importantly 
+a hand needs to have a Yaku in order to be able to win in 
+Riichi Mahjong. 
+
+\subsection{Riichi: 1 Han}
+
+A closed hand in Tenpai can call Riichi, typically the 
+first discard made after calling Riichi is turned sideways. 
+Once in Riichi you cannot change your hand, only drawing 
+a tile and discarding it if it doesn't complete the hand.
+
+\subsection{Double Riichi: 2 Han}
+
+A Riichi called on the first turn is a Double Riichi.
+
+\subsection{Ippatsu: 1 Han}
+
+If after calling Riichi you win before your next discard you 
+have this Yaku. Any player making a call (Chii, Pon, Kan) 
+invalidates this Yaku.
+
+\subsection{Yakuhai: 1 Han}
+
+Having a set of any three dragons, your seat wind or the 
+prevalent wind counts as the Yakuhai Yaku. An example with the 
+red dragons might look like:
+\mmj{234p7p222m789m-77'7z-7p}
+And if you were sitting in the south seat the following hand 
+would be Yakuhai:
+\mmj{45p99p123s333m-2'22z-6p}
+
+\end{document}
