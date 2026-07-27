@@ -14,12 +14,8 @@
 \newcommand{\nl}{\newline}
 
 \begin{document}
-\section{Han Scorers}
 
-These are features of a hand that give Han, one of the measures 
-that is used to calculate the score a hand provides.
-
-\section{Non-Yaku}
+\section{Non-Yaku Han Scorers}
 
 These are features of a hand that provide Han, but do not 
 count as Yaku and themselves cannot make a hand valid.
@@ -87,14 +83,33 @@ If after calling Riichi you win before your next discard you
 have this Yaku. Any player making a call (Chii, Pon, Kan) 
 invalidates this Yaku.
 
-\subsection{Yakuhai: 1 Han}
+\subsection{Yakuhai Prevalent Wind: 1 Han}
 
-Having a set of any three dragons, your seat wind or the 
-prevalent wind counts as the Yakuhai Yaku. An example with the 
-red dragons might look like:
+Having a set of 3 of the wind tile that corresponds to the 
+prevalent wind (sometimes called round wind), counts as 
+this Yaku. For example in an east round the 
+following hand has Yakuhai Prevalent Wind:
+\mmj{123s45p99p333m-1'11z-6p}
+
+\subsection{Yakuhai Seat Wind: 1 Han}
+
+Having a set of 3 of the wind tile that corresponds to 
+your seat position gives this Yaku. If you were in the 
+northern seat then the following hand has Yakuhai Seat Wind:
+\mmj{44489s44456p333z-7s}
+
+\subsection{Yakuhai Dragons: 1 Han}
+
+Having a set of three of a dragon gives this yaku. For example 
+the following has Yakuhai Red Dragon:
 \mmj{234p7p222m789m-77'7z-7p}
-And if you were sitting in the south seat the following hand 
-would be Yakuhai:
-\mmj{45p99p123s333m-2'22z-6p}
+
+% \subsection{Yakuhai Stacking}
+% 
+% If your hand has multiple sets that count as Yakuhai then 
+% they all count toward scoring, For example if you are in 
+% south round then both of the following hands give Yakuhai twice:
+% \mmj{067s234m1z222z-555'z-1z}
+% \mmj{340p2388m-X66Xz-77'7z-1m}
 
 \end{document}
