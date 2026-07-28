@@ -130,7 +130,10 @@ Riichi Mahjong has a special call you can make called
 Riichi. If you hand is closed (you haven't called Chii, Pon 
 or Kan) and it is in Tenpai, you can call Riichi when 
 you discard your tile for the turn. When you discard it 
-turn the tile sideways
+turn the tile sideways to indicate the moment when you 
+called Riichi. After calling Riichi, you cannot change the 
+contents of your hand, on your turn you only draw a tile 
+and discard it until you can call Ron or Tsumo.
 
 \newpage
 
@@ -142,9 +145,9 @@ count as Yaku and themselves cannot make a hand valid.
 \subsection{Dora: 1 Han}
 
 At the start of the game one of the tiles on the Dead Wall 
-is revealed as a Dora Indicator. Since the Dead Wall is 
-7 tiles long, this would look like e.g.
-\mmj{XX4XXXXp}
+is revealed as a Dora Indicator. The dora indicators look 
+like,
+\mmj{4XXXXp}
 Whichever tile comes after the Dora Indicator is a Dora tile, 
 so in the above example \mj{5p} would be a Dora tile.
 The sequence loops so if \mj{9m} is the Dora Indicator 
@@ -160,7 +163,7 @@ alphabetically, green to red to white.
 After a player calls Kan, the next tile of the Dead Wall 
 is flipped and becomes another Dora indicator. Continuing 
 from the example above the wall might now show 
-\mmj{XX4p7sXXX} 
+\mmj{4p7sXXX} 
 Which means that \mj{5p} and \mj{8s} are both Dora tiles.
 
 \subsection{Akadora: 1 Han}
@@ -170,6 +173,15 @@ have one in each suit, and some have one in each except two in
 the circle suit. These tiles look like \mj{0m0s0p}.
 
 \subsection{Uradora: 1 Han}
+
+If you win a hand after calling Riichi the tiles under the 
+the currently revealed Dora Indicators are revealed as 
+Uradora Indicators. E.g. if the dora indicators looked like 
+\mmj{2z8pXXX}
+and you won by Riichi, it might reveal
+\mmj{4m7sXXX}
+as the Uradora Indicators. Meaning that \mj{3z}, \mj{9p}, 
+\mj{5m} and \mj{8s} all give 1 Han.
 
 \subsection{Stacking Dora}
 
@@ -187,22 +199,36 @@ Yaku are features of a hand that provide Han. Importantly
 a hand needs to have a Yaku in order to be able to win in 
 Riichi Mahjong. 
 
-\subsection{Riichi: 1 Han}
+\subsection{Riichi: 1 Han (Closed Hand Only)}
 
 A closed hand in Tenpai can call Riichi, typically the 
 first discard made after calling Riichi is turned sideways. 
 Once in Riichi you cannot change your hand, only drawing 
 a tile and discarding it if it doesn't complete the hand.
 
-\subsection{Double Riichi: 2 Han}
+\subsection{Double Riichi: 2 Han (Closed Hand Only)}
 
 A Riichi called on the first turn is a Double Riichi.
 
-\subsection{Ippatsu: 1 Han}
+\subsection{Ippatsu: 1 Han (Conditional)}
 
 If after calling Riichi you win before your next discard you 
 have this Yaku. Any player making a call (Chii, Pon, Kan) 
 invalidates this Yaku.
+
+\subsection{Iipeikou: 1 Han (Closed Hand Only)}
+
+Pure Double Sequence. Two sequences that are exactly the 
+same, e.g.
+\mmj{234s-234s}
+if you sort your hand in ascending order this often looks like 
+\mmj{667788p1234466m-6m}
+
+\subsection{Ryanpeikou: 3 Han (Closed Hand Only)}
+
+Twice Pure Double Sequence. Two Iepeikou that don't have to 
+be the same, e.g.
+\mmj{334455s056677m4z-4z}
 
 \subsection{Yakuhai Prevalent Wind: 1 Han}
 
@@ -224,6 +250,32 @@ northern seat then the following hand has Yakuhai Seat Wind:
 Having a set of three of a dragon gives this yaku. For example 
 the following has Yakuhai Red Dragon:
 \mmj{234p7p222m789m-77'7z-7p}
+
+\subsection{Shousangen: 2 Han}
+
+Little Three Dragons. Two sets and a pair of the dragons. E.g.
+\mmj{13s55566777z-56'7m-2s}
+
+\subsection{Daisangen: Yakuman}
+
+Big Three Dragons. Three sets of the dragons. E.g.
+\mmj{234p33m55z-6'66z-777'z-5z}
+
+\subsection{Shousuushi: Yakuman}
+
+Little Four Winds. Three sets of winds with a pair of the 
+fourth. E.g.
+\mmj{67s22333z-11'1z-4'44z-8s}
+
+\subsection{Daisuushi: Double Yakuman}
+
+Big Four Winds. A set of each wind tile. E.g.
+\mmj{05p11444z-222'z-333z'-1z}
+
+\subsection{Tanyao: 1 Han}
+
+All Simples. A hand without any terminal tiles (1 and 9) 
+or honor tiles (winds and dragons). E.g.
 
 % \subsection{Yakuhai Stacking}
 % 
