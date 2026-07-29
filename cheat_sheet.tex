@@ -1,7 +1,8 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage{fontspec}
+\usepackage{fontspec,unicode-math}
 \setmainfont{STIX Two Text}
+\setmathfont{STIX Two Math}
 \usepackage[height=1.6\baselineskip]{mahjong}
 \usepackage[skip=10pt plus2pt]{parskip}
 \usepackage{csquotes}
@@ -66,15 +67,15 @@ you took, e.g. you cannot discard \mj{3p} if you took the
 
 \subsubsection{Chii}
 
-Chii is a call you can make only when the player before you 
-in turn order discards a tile you can use to complete a 
-sequence. For example, if you had \mj{57p} in your hand, 
+You can call Chii when the player before you 
+discards a tile that can complete a sequence in your hand. 
+For example, if you had \mj{57p} in your hand, 
 and the player before you discards the \mj{6p} you can 
 call Chii.
 
 \subsubsection{Pon}
 
-Pon is a call you can make when any other player discards a 
+You can call Pon when any other player discards a 
 tile that completes a set of 3 tiles. If you have \mj{77m} in 
 your hand you could call Pon for the third \mj{7m}.
 
@@ -111,7 +112,6 @@ Once your hand is in Tenpai (it only needs one more tile
 to be a valid hand), there are two calls you can make to 
 win the hand.
 
-
 \subsubsection{Ron}
 
 Ron is called when another player discards the tile you need 
@@ -134,6 +134,21 @@ turn the tile sideways to indicate the moment when you
 called Riichi. After calling Riichi, you cannot change the 
 contents of your hand, on your turn you only draw a tile 
 and discard it until you can call Ron or Tsumo.
+
+\subsection{Furiten}
+
+Furiten is a state your hand can be in, and while your 
+hand is in Furiten you cannot win by calling Ron, only 
+by calling Tsumo. There are a couple ways to be in Furiten:
+\begin{enumerate}
+\item If you have previously discarded a tile that could 
+complete your hand. 
+\item If you call Riichi and skip  
+a tile that could complete the hand you are in Furiten.
+\item If not in Riichi and skip a tile
+that could complete the hand, you are temporarily in Furiten 
+until your next discard.
+\end{enumerate}
 
 \newpage
 
@@ -193,100 +208,179 @@ Dora Indicator was
 \mmj{4XXXXm}
 then \mj{0m} would be worth 2 Han.
 
-\section{Yaku}
-
-Yaku are features of a hand that provide Han. Importantly 
-a hand needs to have a Yaku in order to be able to win in 
-Riichi Mahjong. 
-
-\subsection{Riichi: 1 Han (Closed Hand Only)}
-
-A closed hand in Tenpai can call Riichi, typically the 
-first discard made after calling Riichi is turned sideways. 
-Once in Riichi you cannot change your hand, only drawing 
-a tile and discarding it if it doesn't complete the hand.
-
-\subsection{Double Riichi: 2 Han (Closed Hand Only)}
-
-A Riichi called on the first turn is a Double Riichi.
-
-\subsection{Ippatsu: 1 Han (Conditional)}
-
-If after calling Riichi you win before your next discard you 
-have this Yaku. Any player making a call (Chii, Pon, Kan) 
-invalidates this Yaku.
-
-\subsection{Iipeikou: 1 Han (Closed Hand Only)}
-
-Pure Double Sequence. Two sequences that are exactly the 
-same, e.g.
-\mmj{234s-234s}
-if you sort your hand in ascending order this often looks like 
-\mmj{667788p1234466m-6m}
-
-\subsection{Ryanpeikou: 3 Han (Closed Hand Only)}
-
-Twice Pure Double Sequence. Two Iepeikou that don't have to 
-be the same, e.g.
-\mmj{334455s056677m4z-4z}
-
-\subsection{Yakuhai Prevalent Wind: 1 Han}
-
-Having a set of 3 of the wind tile that corresponds to the 
-prevalent wind (sometimes called round wind), counts as 
-this Yaku. For example in an east round the 
-following hand has Yakuhai Prevalent Wind:
-\mmj{123s45p99p333m-1'11z-6p}
-
-\subsection{Yakuhai Seat Wind: 1 Han}
-
-Having a set of 3 of the wind tile that corresponds to 
-your seat position gives this Yaku. If you were in the 
-northern seat then the following hand has Yakuhai Seat Wind:
-\mmj{44489s44456p333z-7s}
-
-\subsection{Yakuhai Dragons: 1 Han}
-
-Having a set of three of a dragon gives this yaku. For example 
-the following has Yakuhai Red Dragon:
-\mmj{234p7p222m789m-77'7z-7p}
-
-\subsection{Shousangen: 2 Han}
-
-Little Three Dragons. Two sets and a pair of the dragons. E.g.
-\mmj{13s55566777z-56'7m-2s}
-
-\subsection{Daisangen: Yakuman}
-
-Big Three Dragons. Three sets of the dragons. E.g.
-\mmj{234p33m55z-6'66z-777'z-5z}
-
-\subsection{Shousuushi: Yakuman}
-
-Little Four Winds. Three sets of winds with a pair of the 
-fourth. E.g.
-\mmj{67s22333z-11'1z-4'44z-8s}
-
-\subsection{Daisuushi: Double Yakuman}
-
-Big Four Winds. A set of each wind tile. E.g.
-\mmj{05p11444z-222'z-333z'-1z}
-
-\subsection{Tanyao: 1 Han}
-
-All Simples. A hand without any terminal tiles (1 and 9) 
-or honor tiles (winds and dragons). E.g.
-
-% \subsection{Yakuhai Stacking}
+% \section{Yaku}
 % 
-% If your hand has multiple sets that count as Yakuhai then 
-% they all count toward scoring, For example if you are in 
-% south round then both of the following hands give Yakuhai twice:
-% \mmj{067s234m1z222z-555'z-1z}
-% \mmj{340p2388m-X66Xz-77'7z-1m}
+% Yaku are features of a hand that provide Han. Importantly 
+% a hand needs to have a Yaku in order to be able to win in 
+% Riichi Mahjong. 
+% 
+% \subsection{Riichi: 1 Han (Closed Hand Only)}
+% 
+% A closed hand in Tenpai can call Riichi, typically the 
+% first discard made after calling Riichi is turned sideways. 
+% Once in Riichi you cannot change your hand, only drawing 
+% a tile and discarding it if it doesn't complete the hand.
+% 
+% \subsection{Double Riichi: 2 Han (Closed Hand Only)}
+% 
+% A Riichi called on the first turn is a Double Riichi.
+% 
+% \subsection{Ippatsu: 1 Han (Conditional)}
+% 
+% If after calling Riichi you win before your next discard you 
+% have this Yaku. Any player making a call (Chii, Pon, Kan) 
+% invalidates this Yaku.
+% 
+% \subsection{Iipeikou: 1 Han (Closed Hand Only)}
+% 
+% Pure Double Sequence. Two sequences that are exactly the 
+% same, e.g.
+% \mmj{234s-234s}
+% if you sort your hand in ascending order this often looks like 
+% \mmj{667788p1234466m-6m}
+% 
+% \subsection{Ryanpeikou: 3 Han (Closed Hand Only)}
+% 
+% Twice Pure Double Sequence. Two Iepeikou that don't have to 
+% be the same, e.g.
+% \mmj{334455s056677m4z-4z}
+% 
+% \subsection{Pinfu: 1 Han (Closed Hand Only)}
+% 
+% Hand consists of only sequences and a pair, and the 
+% winning tile is from an open wait. More specifically, 
+% Pinfu is scored if a closed hand scores no additional Fu.
+% E.g.
+% \mmj{12356s33345p678m-4s}
+% 
+% \subsection{Chiitoitsu: 2 Han (Closed Hand Only)}
+% 
+% Seven Pairs. This hand breaks the normal rule of 5 shapes, 
+% and is instead a hand that contains 7 pairs of tiles. 
+% Chiitoitsu always scores 25 Fu that doesn't round up. E.g.
+% \mmj{77s0588p33m11556z-6z}
+% 
+% \subsection{Yakuhai Prevalent Wind: 1 Han}
+% 
+% Having a set of 3 of the wind tile that corresponds to the 
+% prevalent wind (sometimes called round wind), counts as 
+% this Yaku. For example in an east round the 
+% following hand has Yakuhai Prevalent Wind:
+% \mmj{123s45p99p333m-1'11z-6p}
+% 
+% \subsection{Yakuhai Seat Wind: 1 Han}
+% 
+% Having a set of 3 of the wind tile that corresponds to 
+% your seat position gives this Yaku. If you were in the 
+% northern seat then the following hand has Yakuhai Seat Wind:
+% \mmj{44489s44456p333z-7s}
+% 
+% \subsection{Yakuhai Dragons: 1 Han}
+% 
+% Having a set of three of a dragon gives this yaku. For example 
+% the following has Yakuhai Red Dragon:
+% \mmj{234p7p222m789m-77'7z-7p}
+% 
+% \subsection{Shousangen: 2 Han}
+% 
+% Little Three Dragons. Two sets and a pair of the dragons. E.g.
+% \mmj{13s55566777z-56'7m-2s}
+% 
+% \subsection{Daisangen: Yakuman}
+% 
+% Big Three Dragons. Three sets of the dragons. E.g.
+% \mmj{234p33m55z-6'66z-777'z-5z}
+% 
+% \subsection{Shousuushi: Yakuman}
+% 
+% Little Four Winds. Three sets of winds with a pair of the 
+% fourth. E.g.
+% \mmj{67s22333z-11'1z-4'44z-8s}
+% 
+% \subsection{Daisuushi: Double Yakuman}
+% 
+% Big Four Winds. A set of each wind tile. E.g.
+% \mmj{05p11444z-222'z-333z'-1z}
+% 
+% \subsection{Tanyao: 1 Han}
+% 
+% All Simples. A hand without any terminal tiles (1 and 9) 
+% or honor tiles (winds and dragons). E.g.
+% \mmj{33678s222406p67m-8m}
+% 
+% \subsection{Sanshoku Doujun: 2 Han (1 if Open)}
+% 
+% Triple Mixed Sequence. Three sequences with the same numbers 
+% in three different suits. E.g.
+% \mmj{12388s123p12345m-5'55z-3m}
+% 
+% \subsection{Ittsu: 2 Han (1 if Open)}
+% 
+% Pure Straight. The sequences 123, 456, and 789 all in 
+% one suit. E.g.
+% \mmj{456789s3344p-2'13s-3p}
+% 
+% \subsection{Chanta: 2 Han (1 if Open)}
+% 
+% Half Outside. Every shape including the pair, contains 
+% a terminal or honor tile. E.g.
+% \mmj{123s1178p123m111z-9p}
+% 
+% \subsection{Junchan: 3 Han (1 if Open)}
+% 
+% Full Outside. Every shape including the pair contains a 
+% terminal tile. E.g.
+% \mmj{123s1178p123999m-9p}
+% 
+% \subsection{Honroutou: 2 Han}
+% 
+% All Terminals and Honors. Every tile in the hand is a terminal 
+% or honor tile. E.g.
+% \mmj{1199s111p555666z-9s}
+% 
+% \subsection{Chinroutou: Yakuman}
+% 
+% All Terminals. Every tile in the hand is a terminal tile. E.g.
+% \mmj{1199s111p111999m-9s}
 
 \newpage
 \section{Scoring}
+
+\subsection{Calculation}
+
+Once you have won a hand it's time to calculate your score. First 
+determine the Han ($h$) and Fu ($f$) count of the hand, then use the 
+following formula to calculate the base points of the hand:
+$$f\times2^{2+h}.$$
+If base points is 2000 or above the hand becomes a Mangan.
+\begin{enumerate}
+\item Non dealer wins by Tsumo, each player pays base points 
+and the dealer pays  $2\times$ base points.
+\item Non dealer wins by Ron, the player who dealt in pays 
+$4\times$ base points.
+\item Dealer wins by Tsumo, each player pays $2\times$ base 
+points.
+\item Dealer wins by Ron, the player who dealt in pays $6\times$
+base points.
+\end{enumerate}
+The amount a player needs to pay gets rounded up to the nearest 100.
+
+\subsubsection{Mangan and Above}
+
+If you have a hand with 3 Han and 70+ Fu, 4 Han and 40+ Fu or 5 Han, you 
+have a Mangan, which is worth 2000 base points. If you have more Han the 
+hand can improve according to the table below.
+
+\begin{tabular}{|l|l|l|}
+\hline
+Han & Name & Base Points \\
+\hline
+6-7 & Haneman & 3000 \\
+8-10 & Baiman & 4000 \\
+11-12 & Sanbaiman & 6000 \\
+13+ & Kazoe Yakuman & 8000 \\
+\hline
+\end{tabular}
 
 \subsection{Fu}
 
