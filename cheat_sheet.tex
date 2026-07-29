@@ -285,4 +285,49 @@ or honor tiles (winds and dragons). E.g.
 % \mmj{067s234m1z222z-555'z-1z}
 % \mmj{340p2388m-X66Xz-77'7z-1m}
 
+\newpage
+\section{Scoring}
+
+\subsection{Fu}
+
+Hands start with 20 Fu by default, and then after additional 
+Fu is counted the score is rounded up to the nearest 10. 
+
+\subsubsection{Fu for Tile Groups}
+
+The tile groups in a hand can give Fu, sequences always 
+give 0 Fu.
+
+\begin{tabular}{|lcc|}
+\hline
+Group Type & Simples & Terminals \& Honors \\
+\hline
+Triplet (open) & 2 & 4 \\
+Triplet (closed) & 4 & 8 \\
+Kan (open) & 8 & 16 \\
+Kan (closed) & 16 & 32 \\
+\hline
+\end{tabular}
+
+You can think of this as a triplet gives 4 and a Kan gives 16. 
+Then halve if it's open and double if it made from honor or 
+terminal tiles.
+
+\subsubsection{Fu for Tile Wait}
+
+You can also score a small amount of Fu based on the 
+hand's tile wait.
+
+\begin{tabular}{|l|c|}
+\hline
+Wait Type & Fu \\
+\hline
+Open Wait (Ryanmen) & 0 \\
+Dual Pair Wait (Shanpon) & 0 \\
+Closed Wait (Kanchan) & 2 \\
+Edge Wait (Penchan) & 2 \\
+Pair Wait (Tanki) & 2 \\
+\hline
+\end{tabular}
+
 \end{document}
