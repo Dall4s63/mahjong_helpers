@@ -208,140 +208,249 @@ Dora Indicator was
 \mmj{4XXXXm}
 then \mj{0m} would be worth 2 Han.
 
-% \section{Yaku}
-% 
-% Yaku are features of a hand that provide Han. Importantly 
-% a hand needs to have a Yaku in order to be able to win in 
-% Riichi Mahjong. 
-% 
-% \subsection{Riichi: 1 Han (Closed Hand Only)}
-% 
-% A closed hand in Tenpai can call Riichi, typically the 
-% first discard made after calling Riichi is turned sideways. 
-% Once in Riichi you cannot change your hand, only drawing 
-% a tile and discarding it if it doesn't complete the hand.
-% 
-% \subsection{Double Riichi: 2 Han (Closed Hand Only)}
-% 
-% A Riichi called on the first turn is a Double Riichi.
-% 
-% \subsection{Ippatsu: 1 Han (Conditional)}
-% 
-% If after calling Riichi you win before your next discard you 
-% have this Yaku. Any player making a call (Chii, Pon, Kan) 
-% invalidates this Yaku.
-% 
-% \subsection{Iipeikou: 1 Han (Closed Hand Only)}
-% 
-% Pure Double Sequence. Two sequences that are exactly the 
-% same, e.g.
-% \mmj{234s-234s}
-% if you sort your hand in ascending order this often looks like 
-% \mmj{667788p1234466m-6m}
-% 
-% \subsection{Ryanpeikou: 3 Han (Closed Hand Only)}
-% 
-% Twice Pure Double Sequence. Two Iepeikou that don't have to 
-% be the same, e.g.
-% \mmj{334455s056677m4z-4z}
-% 
-% \subsection{Pinfu: 1 Han (Closed Hand Only)}
-% 
-% Hand consists of only sequences and a pair, and the 
-% winning tile is from an open wait. More specifically, 
-% Pinfu is scored if a closed hand scores no additional Fu.
-% E.g.
-% \mmj{12356s33345p678m-4s}
-% 
-% \subsection{Chiitoitsu: 2 Han (Closed Hand Only)}
-% 
-% Seven Pairs. This hand breaks the normal rule of 5 shapes, 
-% and is instead a hand that contains 7 pairs of tiles. 
-% Chiitoitsu always scores 25 Fu that doesn't round up. E.g.
-% \mmj{77s0588p33m11556z-6z}
-% 
-% \subsection{Yakuhai Prevalent Wind: 1 Han}
-% 
-% Having a set of 3 of the wind tile that corresponds to the 
-% prevalent wind (sometimes called round wind), counts as 
-% this Yaku. For example in an east round the 
-% following hand has Yakuhai Prevalent Wind:
-% \mmj{123s45p99p333m-1'11z-6p}
-% 
-% \subsection{Yakuhai Seat Wind: 1 Han}
-% 
-% Having a set of 3 of the wind tile that corresponds to 
-% your seat position gives this Yaku. If you were in the 
-% northern seat then the following hand has Yakuhai Seat Wind:
-% \mmj{44489s44456p333z-7s}
-% 
-% \subsection{Yakuhai Dragons: 1 Han}
-% 
-% Having a set of three of a dragon gives this yaku. For example 
-% the following has Yakuhai Red Dragon:
-% \mmj{234p7p222m789m-77'7z-7p}
-% 
-% \subsection{Shousangen: 2 Han}
-% 
-% Little Three Dragons. Two sets and a pair of the dragons. E.g.
-% \mmj{13s55566777z-56'7m-2s}
-% 
-% \subsection{Daisangen: Yakuman}
-% 
-% Big Three Dragons. Three sets of the dragons. E.g.
-% \mmj{234p33m55z-6'66z-777'z-5z}
-% 
-% \subsection{Shousuushi: Yakuman}
-% 
-% Little Four Winds. Three sets of winds with a pair of the 
-% fourth. E.g.
-% \mmj{67s22333z-11'1z-4'44z-8s}
-% 
-% \subsection{Daisuushi: Double Yakuman}
-% 
-% Big Four Winds. A set of each wind tile. E.g.
-% \mmj{05p11444z-222'z-333z'-1z}
-% 
-% \subsection{Tanyao: 1 Han}
-% 
-% All Simples. A hand without any terminal tiles (1 and 9) 
-% or honor tiles (winds and dragons). E.g.
-% \mmj{33678s222406p67m-8m}
-% 
-% \subsection{Sanshoku Doujun: 2 Han (1 if Open)}
-% 
-% Triple Mixed Sequence. Three sequences with the same numbers 
-% in three different suits. E.g.
-% \mmj{12388s123p12345m-5'55z-3m}
-% 
-% \subsection{Ittsu: 2 Han (1 if Open)}
-% 
-% Pure Straight. The sequences 123, 456, and 789 all in 
-% one suit. E.g.
-% \mmj{456789s3344p-2'13s-3p}
-% 
-% \subsection{Chanta: 2 Han (1 if Open)}
-% 
-% Half Outside. Every shape including the pair, contains 
-% a terminal or honor tile. E.g.
-% \mmj{123s1178p123m111z-9p}
-% 
-% \subsection{Junchan: 3 Han (1 if Open)}
-% 
-% Full Outside. Every shape including the pair contains a 
-% terminal tile. E.g.
-% \mmj{123s1178p123999m-9p}
-% 
-% \subsection{Honroutou: 2 Han}
-% 
-% All Terminals and Honors. Every tile in the hand is a terminal 
-% or honor tile. E.g.
-% \mmj{1199s111p555666z-9s}
-% 
-% \subsection{Chinroutou: Yakuman}
-% 
-% All Terminals. Every tile in the hand is a terminal tile. E.g.
-% \mmj{1199s111p111999m-9s}
+\section{Yaku}
+
+Yaku are features of a hand that provide Han. Importantly 
+a hand needs to have a Yaku in order to be able to win in 
+Riichi Mahjong. 
+
+\subsection{Riichi: 1 Han (Closed Hand Only)}
+
+A closed hand in Tenpai can call Riichi, typically the 
+first discard made after calling Riichi is turned sideways. 
+Once in Riichi you cannot change your hand, only drawing 
+a tile and discarding it if it doesn't complete the hand.
+
+\subsection{Double Riichi: 2 Han (Closed Hand Only)}
+
+A Riichi called on the first turn is a Double Riichi.
+
+\subsection{Ippatsu: 1 Han (Conditional)}
+
+If after calling Riichi you win before your next discard you 
+have this Yaku. Any player making a call (Chii, Pon, Kan) 
+invalidates this Yaku.
+
+\subsection{Iipeikou: 1 Han (Closed Hand Only)}
+
+Pure Double Sequence. Two sequences that are exactly the 
+same, e.g.
+\mmj{234s-234s}
+if you sort your hand in ascending order this often looks like 
+\mmj{667788p1234466m-6m}
+
+\subsection{Ryanpeikou: 3 Han (Closed Hand Only)}
+
+Twice Pure Double Sequence. Two Iepeikou that don't have to 
+be the same, e.g.
+\mmj{334455s056677m4z-4z}
+
+\subsection{Pinfu: 1 Han (Closed Hand Only)}
+
+Hand consists of only sequences and a pair, and the 
+winning tile is from an open wait. More specifically, 
+Pinfu is scored if a closed hand scores no additional Fu.
+E.g.
+\mmj{12356s33345p678m-4s}
+
+\subsection{Chiitoitsu: 2 Han (Closed Hand Only)}
+
+Seven Pairs. This hand breaks the normal rule of 5 shapes, 
+and is instead a hand that contains 7 pairs of tiles. 
+Chiitoitsu always scores 25 Fu that doesn't round up. E.g.
+\mmj{77s0588p33m11556z-6z}
+
+\subsection{Yakuhai Prevalent Wind: 1 Han}
+
+Having a set of 3 of the wind tile that corresponds to the 
+prevalent wind (sometimes called round wind), counts as 
+this Yaku. For example in an east round the 
+following hand has Yakuhai Prevalent Wind:
+\mmj{123s45p99p333m-1'11z-6p}
+
+\subsection{Yakuhai Seat Wind: 1 Han}
+
+Having a set of 3 of the wind tile that corresponds to 
+your seat position gives this Yaku. If you were in the 
+northern seat then the following hand has Yakuhai Seat Wind:
+\mmj{44489s44456p333z-7s}
+
+\subsection{Yakuhai Dragons: 1 Han}
+
+Having a set of three of a dragon gives this yaku. For example 
+the following has Yakuhai Red Dragon:
+\mmj{234p7p222m789m-77'7z-7p}
+
+\subsection{Shousangen: 2 Han}
+
+Little Three Dragons. Two sets and a pair of the dragons. E.g.
+\mmj{13s55566777z-56'7m-2s}
+
+\subsection{Daisangen: Yakuman}
+
+Big Three Dragons. Three sets of the dragons. E.g.
+\mmj{234p33m55z-6'66z-777'z-5z}
+
+\subsection{Shousuushi: Yakuman}
+
+Little Four Winds. Three sets of winds with a pair of the 
+fourth. E.g.
+\mmj{67s22333z-11'1z-4'44z-8s}
+
+\subsection{Daisuushi: Double Yakuman}
+
+Big Four Winds. A set of each wind tile. E.g.
+\mmj{05p11444z-222'z-333z'-1z}
+
+\subsection{Tanyao: 1 Han}
+
+All Simples. A hand without any terminal tiles (1 and 9) 
+or honor tiles (winds and dragons). E.g.
+\mmj{33678s222406p67m-8m}
+
+\subsection{Sanshoku Doujun: 2 Han (1 if Open)}
+
+Triple Mixed Sequence. Three sequences with the same numbers 
+in three different suits. E.g.
+\mmj{12388s123p12345m-5'55z-3m}
+
+\subsection{Ittsu: 2 Han (1 if Open)}
+
+Pure Straight. The sequences 123, 456, and 789 all in 
+one suit. E.g.
+\mmj{456789s3344p-2'13s-3p}
+
+\subsection{Chanta: 2 Han (1 if Open)}
+
+Half Outside. Every shape including the pair, contains 
+a terminal or honor tile. E.g.
+\mmj{123s1178p123m111z-9p}
+
+\subsection{Junchan: 3 Han (1 if Open)}
+
+Full Outside. Every shape including the pair contains a 
+terminal tile. E.g.
+\mmj{123s1178p123999m-9p}
+
+\subsection{Honroutou: 2 Han}
+
+All Terminals and Honors. Every tile in the hand is a terminal 
+or honor tile. E.g.
+\mmj{1199s111p555666z-9s}
+
+\subsection{Chinroutou: Yakuman}
+
+All Terminals. Every tile in the hand is a terminal tile. E.g.
+\mmj{1199s111p111999m-9s}
+
+\subsection{Tsuiisou: Yakuman}
+
+All Honors. Every tile in the hand is an honor tile. E.g.
+\mmj{1122255z-33'3z-666'z-1z}
+
+\subsection{Toitoi: 2 Han}
+
+Only Triplets. The hand shapes are all triplets or Kans. E.g.
+\mmj{444s55777p44z-X66Xz-4z}
+
+\subsection{Sanankou: 2 Han}
+
+Three Concealed Triplets. The hand contains three triplets that 
+were not formed by calls that open a hand. This means that the 
+hand can be open, so long as the triplets are not open. 
+Additionally, calling Ron to complete the third triplet counts 
+as opening that triplet (Tsumo does not count as opening the 
+triplet). E.g.
+\mmj{2225s777p777z-7'68m-5s}
+
+\subsection{Suuankou: Yakuman (Double on a Tanki Wait)}
+
+Four Concealed Triplets. The hand contains four triplets that 
+were not formed by calls. In order to win by Ron you must 
+commit to the Tanki Wait. E.g.
+\mmj{505p222888m4z-X88Xs-4z}
+
+\subsection{Sankantsu: 2 Han}
+
+Three Quads. The hand has three Kan shapes. E.g.
+\mmj{234s6z-33'33m-22"2p-X33Xz-6z}
+
+\subsection{Suukantsu: Yakuman}
+
+Four Quads. The hand has four Kan shapes. E.g.
+\mmj{9p-7777's-2"22p-33'33p-66"6z-9p}
+
+\subsection{Sanshoku Doukou: 2 Han}
+
+Triple Triplets. The hand has three triplets that have the 
+same number, in the three suits. E.g.
+\mmj{123777s5577p777m-7p}
+
+\subsection{Honitsu: 3 Han (2 if Open)}
+
+Half Flush. The hand is only honor tiles and number tiles 
+from a single suit. E.g.
+\mmj{3445699s333z-5'55z-5s}
+
+\subsection{Chinitsu: 6 Han (5 if Open)}
+
+Full Flush. The hand has only number tiles from a single suit.
+E.g.
+\mmj{2344568899s-111's-9s}
+
+\subsection{Ryuuiisou: Yakuman}
+
+All Green. The hand only contains the \mj{2s}, \mj{3s}, \mj{4s}
+\mj{6s}, \mj{8s} and \mj{6z}. E.g.
+\mmj{2342366688s-6'66z-4s}
+
+\subsection{Chuuren Poutou: Yakuman (Double if 9-sided Wait)}
+
+Nine Gates. The hand contains the tiles 1112345678999 from 
+one suit with one extra tile from the suit. E.g.
+\mmj{1112345678999p-3p}
+
+\subsection{Kokushi Musou: Yakuman (Double on 13-sided Wait)}
+
+Thirteen Orphans. One of each terminal and honor tiles and 
+one extra tile that makes a pair. E.g.
+\mmj{19s19p119m123567z-4z}
+
+\subsection{Haitei Raoyue: 1 Han}
+
+Under the Sea. Win by Tsumo with the last tile drawn from the 
+wall.
+
+\subsection{Houtei Raoyui: 1 Han}
+
+Under the River. Win by Ron on the last tile discarded of the 
+game.
+
+\subsection{Rinshan Kaihou: 1 Han}
+
+After a Kan. Win with the tile drawn from the dead wall after 
+calling Kan.
+
+\subsection{Chankan: 1 Han}
+
+Robbing a Kan. Win of the tile that another player is using to 
+upgrade a triplet into a Kan.
+
+\subsection{Nagashi Mangan: 5 Han}
+
+Mangan at Draw. Reach exhaustive draw having only discarded 
+terminal and honor tiles, none of which got called. 
+
+\subsection{Tenhou: Yakuman}
+
+Blessing of Heaven. As dealer win with the first draw of 
+the hand. Calls invalidate this Yaku.
+
+\subsection{Chiihou: Yakuman}
+
+Blessing of Earth. As non-dealer win with the first draw 
+of the hand. Calls invalidate this Yaku.
+
 
 \newpage
 \section{Scoring}
